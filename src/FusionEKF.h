@@ -14,6 +14,13 @@ public:
   /**
   * Constructor.
   */
+
+
+  // added by me
+  //* state vector
+  Eigen::VectorXd x_;
+
+
   FusionEKF();
 
   /**
@@ -44,6 +51,7 @@ private:
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
   Eigen::MatrixXd Hj_;
+
 };
 
 #endif /* FusionEKF_H_ */
