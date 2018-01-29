@@ -28,7 +28,7 @@ std::string hasData(std::string s) {
 
 int main()
 {
-  std::cout << "Entering main" << std::endl;  
+
   uWS::Hub h;
 
   // Create a Kalman Filter instance
@@ -38,8 +38,6 @@ int main()
   Tools tools;
   vector<VectorXd> estimations;
   vector<VectorXd> ground_truth;
-
-  std::cout << "Entering tools? " << std::endl;
   
   h.onMessage([&fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -108,7 +106,6 @@ int main()
     	  ground_truth.push_back(gt_values);
           
           //Call ProcessMeasurment(meas_package) for Kalman filter
-        std::cout << "Calling ProcessMeasurement" << std::endl; 
     	  fusionEKF.ProcessMeasurement(meas_package);    	  
 
     	  //Push the current estimated x,y positon from the Kalman filter's state vector

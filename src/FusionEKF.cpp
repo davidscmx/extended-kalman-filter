@@ -68,7 +68,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       * Remember: you'll need to convert radar from polar to cartesian coordinates.
     */
     // first measurement
-    cout << "EKF: " << endl;
     ekf_.x_ = VectorXd(4);
     
     //set the state with the initial location and zero velocity
@@ -163,7 +162,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
   
   if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
-    std::cout << "Are we entering radar" << std::endl;
 
     Tools tools;
     Hj_ = tools.CalculateJacobian(ekf_.x_);
@@ -178,6 +176,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
   }
 
   // print the output
-  cout << "x_ = " << ekf_.x_ << endl;
-  cout << "P_ = " << ekf_.P_ << endl;
+  //cout << "x_ = " << ekf_.x_ << endl;
+  //cout << "P_ = " << ekf_.P_ << endl;
 }
