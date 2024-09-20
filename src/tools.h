@@ -9,14 +9,7 @@ using namespace std;
 
 class Tools {
 public:
-  /**
-  * Constructor.
-  */
   Tools();
-
-  /**
-  * Destructor.
-  */
   virtual ~Tools();
 
   /**
